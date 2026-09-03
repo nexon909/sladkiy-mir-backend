@@ -1,3 +1,11 @@
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # <--- Должен быть первым!
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+
 """
 Django settings for sladkiy_mir_backend project.
 
@@ -25,7 +33,7 @@ SECRET_KEY = 'django-insecure-v8w@_@$+$yg!+02tu)n$@z(79vv+dwaw_=i@3#g*bpccn4yf(1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,3 +145,4 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CORS_ALLOW_ALL_ORIGINS = True
